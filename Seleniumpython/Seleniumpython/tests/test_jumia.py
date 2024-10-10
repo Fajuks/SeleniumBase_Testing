@@ -2,18 +2,19 @@ import time
 
 from seleniumbase import BaseCase
 
+
 class JumiaTestCase(BaseCase):
     def test_jumia(self):
         self.open('https://www.jumia.com.ng/') # this command helps to open the jumia site.
-        self.sleep(5)  #bafter opening the site, the program waits for 5 seconds before carrying any other operation
+        self.sleep(2)  #bafter opening the site, the program waits for 5 seconds before carrying any other operation
 
         for i in range(1,13):# a loop to iterate through all the menu bars
             index_num=f'/main/div[1]/div[1]/div[1]/div/a[{i}]'
             selector=f'//*[@id="jm"]{index_num}'
-            self.sleep(5)
+            self.sleep(2)
 
             if index_num == '/main/div[1]/div[1]/div[1]/div/a[3]':
-                self.click('#jm > main > div.row.-pv`m > div.col16.-df.-j-bet.-pbs > div.flyout-w.-fsh0.-fs0 > div > a:nth-child(5)')
+                self.click_xpath(selector)
                 self.sleep(2)
                 print("element was clicked ")
 
